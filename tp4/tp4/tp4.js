@@ -138,9 +138,6 @@ function handleButtonClick(buttonLabel) {
   }
 }
 
-function mousePressed() {
-}
-
 function drawGame() {
   // Código del juego
   arma(cx, cy, can, calt);
