@@ -3,7 +3,7 @@ class Palabras {
 constructor() {
   // Declaro mis propiedades/variables y les asigno valor
    this.x = int( random(-200, -500 ) );
-    this.y = y;
+    this.y = 0;
     this.t = 40;
     this.v = random( 1, 3 );  //acomodar medidas
     //this.texto = String ; 
@@ -54,8 +54,9 @@ obtenerPalabraAleatoria() {
 dibujar() {
   //dibujar palabras arriba de cuadrados??
     push();  
-    noFill ();
+    fill (0,200,0);
     rect( this.x, this.y + 5, this.t*2, this.t );
+    fill (200, 0, 0) ;
     obtenerPalabraAleatoria(); 
     pop();
     //push();
@@ -68,8 +69,8 @@ dibujar() {
 }
 
 }
-const instancia = new MiClase();
+//const instancia = new MiClase(); //acomodar
 
 // Llama al método para obtener una palabra aleatoria
-const palabraAleatoria = instancia.obtenerPalabraAleatoria();
-console.log("Palabra aleatoria:", palabraAleatoria);
+//const palabraAleatoria = instancia.obtenerPalabraAleatoria();
+//console.log("Palabra aleatoria:", palabraAleatoria);
