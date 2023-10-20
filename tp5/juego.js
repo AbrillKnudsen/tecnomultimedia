@@ -1,17 +1,16 @@
-
 class Juego {
 
 constructor() {
   // Declaro mis propiedades/variables y les asigno valor
   //imgenes 
-  this.imgGanaste = imgGan ;
+ // this.imgGanaste = imgGan ;
   //this.spriteBrazo = spritesheet ; 
   //objetos del juego
   this.julieta = new Julieta (50) ; 
   this.romeo = new Romeo (50);
   this.Palabras = [];
    for ( let i = 0; i < 20; i++ ) {
-      this.palabras.push( new Palabras( i*50 + 50 ) );
+      this.Palabras.push( new Palabras( i*50 + 50 ) );
    }
    //estados
    this.estado = "instrucciones" ; 
@@ -23,7 +22,7 @@ constructor() {
 
 actualizar() {
   for ( let i = 0; i < 20; i++ ) {
-      this.palabras[i].actualizar();
+      this.Palabras[i].actualizar();
   }
   // Verifica el tiempo límite
     const tiempoActual = millis();
@@ -85,6 +84,7 @@ dibujar() {
   }
    mostrarInstrucciones() {
     background(200);
+    textSize (15); 
     text("Instrucciones", width / 2, 100);
     text("Julieta le quiere contar su plan a Romeo, pero solo él puede saberlo", width/2, 130) ; 
     text("Para que no los descubran, Julieta envia un mensaje oculto", width/2, 160);
@@ -94,18 +94,19 @@ dibujar() {
   }
 
   mostrarJuego() {
-    textSize(20);
+    textSize(15);
     text("Mensaje de Julieta: El veneno no me matará, espera y nos escaparemos juntos", width / 2, 50);
     // Dibuja objetos de juego
     this.romeo.dibujar();
-    for (let i = 0; i < this.palabras.length; i++) {
-      this.palabras[i].dibujar();
+    this.Palabras.dibujar(); 
+    for (let i = 0; i < this.Palabras.length; i++) {
+      this.Palabras[i].dibujar();
     }
   }
 
   mostrarGanaste() {
     background(0);
-    image(this.imgGanaste, 0, 0, width, height);
+   // image(this.imgGanaste, 0, 0, width, height);
     text("¡Ganaste!", width / 2, height / 2);
   }
 
