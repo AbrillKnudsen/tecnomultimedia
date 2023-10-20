@@ -1,14 +1,13 @@
-
 class Romeo {
 
-constructor() {
+constructor(t) {
   // Declaro mis propiedades/variables y les asigno valor
   this.tam = t;
     this.x = width / 2;
     this.y = height - this.tam/2;
     
-    this.aim = [] ; //cargar imagenes en preload principal??
-    this.miPreload (); 
+    //this.aim = [] ; //cargar imagenes en preload principal??
+    //this.miPreload (); 
     //this.sprite = this.spriteBrazo ; 
 }
 
@@ -22,17 +21,17 @@ constructor() {
   }
 //}
 
-dibujarConPropiedad(){
-  if (mouseIsPressed) {
-  image (this.aim[frameCount%4], width/2, 0) 
-  }
-}
+//dibujarConPropiedad(){
+//  if (mouseIsPressed) {
+//  image (this.aim[frameCount%4], width/2, 0) 
+//  }
+//}
 
-miPreload(){
-  for(let i = 0; i < 3; i++) {
-    this.mb.push(loadImage('assets/spriteBrazo'+i+'.png')); 
-  }
-}
+//miPreload(){
+//  for(let i = 0; i < 3; i++) {
+//    this.mb.push(loadImage('assets/spriteBrazo'+i+'.png')); 
+//  }
+//}
 
 dibujar() {
 image (this.aim[0], width/2, 0); 
