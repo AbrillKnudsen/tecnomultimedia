@@ -98,7 +98,7 @@ dibujar() {
     text("Mensaje de Julieta: El veneno no me matará, espera y nos escaparemos juntos", width / 2, 50);
     // Dibuja objetos de juego
     this.romeo.dibujar();
-    this.Palabras.dibujar(); 
+   // this.Palabras.dibujar(); 
     for (let i = 0; i < this.Palabras.length; i++) {
       this.Palabras[i].dibujar();
     }
