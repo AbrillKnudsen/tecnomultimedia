@@ -1,6 +1,6 @@
 //tp final 
 
-let pantallass; 
+let imagenPantallas; 
 let textos; 
 let a; 
 
@@ -11,15 +11,16 @@ a = new Aventura ();
 }
 
 function preload (){
- pantallass = [] ; 
+ imagenPantallas = [] ; 
  for(let i = 0; i < 12; i++){
-      pantallass[i] = loadImage("assets/" + i + ".png"); //armar carpeta assets y cargar imagenes 
+      imagenPantallas[i] = loadImage("assets/pantalla" + i + ".png"); 
  }
  
  textos = [] ; //cargar textos 
-  //for(let i = 0; i < 12; i++){
-  //    pantallas[i] =
- // }
+  for(let i = 0; i < 12; i++){
+     textos[i] = loadStrings("assets/textos.txt");
+     console.log(i + ":" + textos[i]);
+  }
 }
 
 
@@ -30,6 +31,17 @@ function draw() {
 
 
 function keyPressed (){
-  a.teclado(); 
+  a.teclado(key); 
   
 }
+
+//esto en primera ventana
+function mouseClicked() {
+  this.clicX = mouseX; // Guarda la posición X del clic del mouse
+  this.clicY = mouseY; // Guarda la posición Y del clic del mouse
+  a.mouseClickeado(clicX,clicY); // Llama a la función mouseClickeado de la aventura y paso las cordenadas como paramtero
+}
+  
+  
+
+
