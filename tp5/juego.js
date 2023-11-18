@@ -29,7 +29,12 @@ class Juego {
       if (tiempoActual - this.tiempoInicio > this.tiempoLimite) {
         this.estado = "perdiste";
       }
+      // this.calcularColision();
     }
+    //if (this.romeo.hits(this.palabras)) {
+
+    //  palabras.splice(i, 1); //esto no funciona :)
+    //}
     // this.romeo.calcularColision (this.palabras) ;
     //contador++; //???
     //agregar cuando pierde/gana
@@ -53,7 +58,7 @@ class Juego {
     if (this.estado === "instrucciones") {
       this.estado = "jugando";
     } else if (this.estado === "jugando") {
-      this.romeo.moverTeclas(keyCode, LEFT_ARROW, RIGHT_ARROW);
+      this.romeo.moverTeclas(keyCode, LEFT_ARROW, RIGHT_ARROW, UP_ARROW, DOWN_ARROW);
       // this.romeo.moverRo(keyCode); //estao no funciona
       if (mouseIsPressed == true) {
         console.log("Mouse presionado. Calculando colisión...");
@@ -80,14 +85,15 @@ class Juego {
     text("Julieta: El veneno es falso", width / 2, 50);
     text("Palabras correctas" + this.contadorPuntos + "/4", 525, 20);
     // Dibuja objetos de juego
-
+    for (let i = 0; i < 20; i++) {
+      this.palabras[i].dibujar();
+    }
     this.romeo.dibujar();
     this.romeo.dibujarConPropiedad();
     //this.botonesRect.palabras();
     this.julieta.dibujar();
-    for (let i = 0; i < 20; i++) {
-      this.palabras[i].dibujar();
-    }
+   
+    // console.log("verifica colision");
   }
 
   mostrarGanaste() {
@@ -101,12 +107,22 @@ class Juego {
     text("¡Perdiste!", width / 2, height / 2);
   }
 
+  //calcularColision() {
+  //  for (let t of this.palabras) {
+      
+  //    if (this.romeo.hits(t)) {
+  //      console.log ("anda colison") ;
+  //      palabras.splice(i, 1);
+  //    }
+  //  }
+  //}
   mouseClickeado(clicX, clicY) {
-    console.log(this.palabras.dentroCuadrado());
-    if (this.estado === "jugando" && this.palabras.dentroCuadrado()) {
+   // console.log(this.palabras.dentroCuadrado());
+    if (this.estado === "jugando" && this.palabras.dentroCuadrado) {
       // Colisión detectada
-      palabras.splice(i, 1); //acá agregar condiciones de cuando gana y cuando pierde, (cuando pierde esta solo por tiempo 
-      //donde delimitar distancis que puede recorrer el mouse? como hacer que romeo siga el mouse? 
+      console.log("colision:");
+      //palabras.splice(i, 1); //acá agregar condiciones de cuando gana y cuando pierde, (cuando pierde esta solo por tiempo
+      //donde delimitar distancis que puede recorrer el mouse? como hacer que romeo siga el mouse?
     }
   }
 }

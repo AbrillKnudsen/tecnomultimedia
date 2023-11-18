@@ -21,11 +21,15 @@ class Romeo {
   }
 
 
-  moverTeclas (tecla, derecha, izquierda) {
+  moverTeclas (tecla, derecha, izquierda, arriba, abajo) {
     if (tecla == izquierda) {
       this.x -= this.tam;
     } else if ( tecla == derecha ) {
       this.x += this.tam;
+    } else if (tecla == arriba) {
+      this.y -= this.tam; 
+    }else if (tecla == abajo) {
+      this.y += this.tam; 
     }
   }
 
@@ -68,12 +72,16 @@ class Romeo {
     // image(this.spriteBrazo[0], 260, 390);
     image(this.ro, width/2 - this.spriteBrazo.length, 420);
     push();
-    //fill(0, 0, 200);
-    //rect(this.x, this.y + 500, this.tam/2, this.tam);
+    fill(0, 0, 200);
+    rect(this.x, this.y + 500, this.tam/2, this.tam);
     pop();
   }
   
+  // hits(palabras){
+  //  return (this.x + this.tam > palabras.x && this.x < palabras.x + palabras.t && this.y + this.tam > palabras.y && this.y < palabras.y + this.tam );
+  //}
   
+
   //  calcularColision(palabras) {
   //     console.log("Calculando colisión en Romeo");
   //  let distanciaColision = 70;

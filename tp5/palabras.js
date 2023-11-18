@@ -44,10 +44,12 @@ class Palabras {
     text(this.laPalabra, this.x + this.t, this.y + this.t / 2);
     pop();
   }
-  
-   dentroCuadrado(x, y) {
-    //verifica si el mouse esta dentro
-    return mouseX > this.x && mouseX < this.x + 100 && mouseY > this.y && mouseY < this.y + 50;  //me parece que el error esta acá, hace falta agregar velocidad? 
+  //probar boton y colisionn 
+  dentroCuadrado() {
+  //  //verifica si el mouse esta dentro
+  return (mouseX > this.x && mouseX < this.x + 100 && mouseY > this.y && mouseY < this.y + 50);  //me parece que el error esta acá, hace falta agregar velocidad? NO FUNCIONO 
+  //// // return this.x + this.tam > mouseX && this.x < mouseX + Obstaculo.tam && this.y + this.tam > mouseY && this.y < mouseY + this.tam
+   //return (this.x + this.t > mouseX && this.x < mouseX && this.y + this.t > mouseY && this.y < mouseY + this.t);
   }
   
 }
